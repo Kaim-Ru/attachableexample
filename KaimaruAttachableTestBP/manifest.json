@@ -1,0 +1,30 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "KaimaruAttachableTest",
+		"description": "KaimaruAttachableTest Behavior Pack",
+		"uuid": "2efab3ea-40c8-3aea-ade2-9458dd36e59b",
+		"version": [1, 0, 0],
+		"min_engine_version": [1, 20, 0]
+	},
+	"metadata": {
+		"authors": ["KaimRu"],
+		"generated_with": {
+			"blockbench_item_wizard": ["1.2.1"]
+		}
+	},
+	"modules": [
+		{
+			"description": "Behavior",
+			"version": [1, 0, 0],
+			"uuid": "9bf7ebcb-2b9d-64c9-3bc8-60b348408e59",
+			"type": "data"
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "6655f63a-6862-1146-c8ed-b0f2af5edbf3",
+			"version": [1, 0, 0]
+		}
+	]
+}

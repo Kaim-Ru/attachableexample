@@ -1,0 +1,45 @@
+{
+  //この//から始まる文章は「コメント」だから消していい。
+  //基本的にはリソパの.entity.jsonと同じように書く。
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "kaimaru:attachabletest1", // アイテムのidと同じ
+      //これはレンダーコントローラーといって、見た目（レンダー）を操作（コントロール）するためのもの。デフォルトのものを参照しているため、このアドオンにこのファイルはない。
+      //materials,textures,geometryの指定はこのレンダーコントローラーに依存しており、defaultや、enchantedという名前はのはrender_controllersで参照される。
+      "render_controllers": ["controller.render.item_default"],
+      "materials": {
+        //マテリアルを指定する。マテリアルは、光らせたり、半透明に対応させたりできる。基本はいじらなくてよし。
+        "default": "entity_alphatest", //render_controllersと同じく、デフォルトを参照。entity_alphatestは半透明に対応している。
+        "enchanted": "entity_alphatest_glint" //エンチャントってテクスチャにつくマテリアル。
+      },
+      "textures": {
+        //テクスチャを指定する。
+        "default": "textures/entity/attachable/attachabletest1", //アイテムの違うテクスチャをここにかく
+        "enchanted": "textures/misc/enchanted_item_glint" //エンチャントのテクスチャ。デフォルトを参照。基本はいじらなくてよし。
+      },
+      "geometry": {
+        //ジオメトリ(3Dの見た目)を指定する。
+        "default": "geometry.attachabletest1" //これが3Dの見た目。models/entity/attachable/attachabletest1.geo.jsonに書かれたgeometry.attachabletest1を参照している。
+      },
+      "animations": {
+        //これはアニメーション。1人称視点と3人称視点で位置を変えなければズレてしまうので、アニメーションを使って位置を変える。
+        "first_person_hold": "animation.attachabletest1.first_person_hold", // 1人称視点のアニメーション。animations/attachables/attachabletest1.animation.jsonに書かれたanimation.attachabletest1.first_person_holdを参照している。
+        "third_person_hold": "animation.attachabletest1.third_person_hold" // 3人称視点のアニメーション。animations/attachables/attachabletest1.animation.jsonに書かれたanimation.attachabletest1.third_person_holdを参照している。
+      },
+      "scripts": {
+        //ここでは実際にアニメーションを実行したりする。その他細かいことを行う。
+        "animate": [
+          //この中に描画されたときに実行するアニメーションを書く。
+          {
+            "first_person_hold": "c.is_first_person" //"実行するアニメーション": "条件"という形で書く。Molangという言語で条件を書く。c.is_first_personは1人称視点のときにtrueになるので、first_person_holdアニメーションが実行される。
+          },
+          {
+            "third_person_hold": "!c.is_first_person" //!をつけると、反対にできる。つまり、1人称視点ではないとき(c.is_first_personがfalseのとき)にthird_person_holdアニメーションが実行される。
+          }
+          //条件を書かないときは"first_person_hold"や"third_person_hold"だけでOK。条件を書かず、アニメーションがloopするように設定されてない場合、描画されたときに一度だけしか実行されない。
+        ]
+      }
+    }
+  }
+}

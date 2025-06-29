@@ -1,0 +1,30 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "KaimaruAttachableTest",
+		"description": "KaimaruAttachableTest Resource Pack",
+		"uuid": "6655f63a-6862-1146-c8ed-b0f2af5edbf3",
+		"version": [1, 0, 0],
+		"min_engine_version": [1, 16, 0]
+	},
+	"metadata": {
+		"authors": ["KaimRu"],
+		"generated_with": {
+			"blockbench_item_wizard": ["1.2.1"]
+		}
+	},
+	"modules": [
+		{
+			"description": "KaimaruAttachableTest",
+			"type": "resources",
+			"uuid": "eaac55b5-d216-3c3c-a6c1-521580154f20",
+			"version": [1, 0, 0]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "2efab3ea-40c8-3aea-ade2-9458dd36e59b",
+			"version": [1, 0, 0]
+		}
+	]
+}
