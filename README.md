@@ -1,6 +1,7 @@
 # attachableのexample
 
 attachableのexampleです。<br/>
+attachables/attachabletest1.attachable.jsonに詳細な説明がコメントアウトされています。<br/>
 手に持ったときのテクスチャ:textures/entity/attachable/attachabletest1.png<br/>
 その他:textures/items/attachabletest1.png<br/>
 を参照しています。
